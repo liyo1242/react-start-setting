@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "target": "es5",
     "lib": [
       "dom",
@@ -10,13 +11,12 @@
       "./node_modules/@types/",
       "./types"
     ],
-    "allowJs": true,
+    "allowJs": false,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "removeComments": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
