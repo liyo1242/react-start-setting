@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+## My react template 🐢
+Engineers often need reference kits or examples to work with, so I thought it was time to prepare one of my own.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About this Project 🤖
+This project will be based on the implementation of several modules
+1. API anti-corruption layer
+2. SSO authentication system (For front-end)
+3. Permission routing system
+4. i18n module
+5. mock data server
 
-## Available Scripts
+## module detail 👀
+WIP
+## Code Work Flow 🐳
+To make my work easier and to ensure the quality of the code, I have designed some processes for this project
 
-In the project directory, you can run:
+* Because I can't find a space where I can deploy Sonarqube without spending money, so I set up a local docker and provided the code scanning service to myself, the cons is that I can't integrate it to the CI of Azure devops 🤣
+* I chose Azure devops because I also created work items on it to develop my plans.
 
-### `npm start`
+![](./.asset/workflow.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## About deploy to heroku 👻
+Both heroku and Azure Devops are free and suitable for light use.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Before you use yaml to create your azure devOps pipeline, you will need to set some variables first
+* HEROKU_API_KEY : this is your heroku token, generate from heroku CLI 's command ```heroku authorizations:create```
+* HEROKU_APP_NAME : this is your heroku app name
