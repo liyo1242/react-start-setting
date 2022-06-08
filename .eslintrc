@@ -1,6 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": ["react-app", "plugin:prettier/recommended"],
+  "extends": ["react-app", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
   "plugins": [
     "@typescript-eslint",
     "import",
@@ -10,21 +10,20 @@
     "react-hooks"
   ],
   "rules": {
-    "no-use-before-define": "off",
+    "semi": ["error", "never"],
     "prettier/prettier": "error",
-    "no-restricted-imports": [
+    "no-use-before-define": "off",
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+    "no-redeclare": "off",
+    "no-unused-vars": [
       "error",
       {
-        "paths": [
-          {
-            "name": "@mui/material",
-            "importNames": ["makeStyles", "createMuiTheme"],
-            "message": "Please import from @mui/material/styles instead. See https://material-ui.com/guides/minimizing-bundle-size/#option-2 for more information"
-          }
-        ]
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
       }
     ],
-    "no-redeclare": "off",
     "import/no-anonymous-default-export": "off",
     "@typescript-eslint/no-redeclare": ["error"]
   }
