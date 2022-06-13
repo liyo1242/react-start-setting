@@ -1,5 +1,5 @@
 interface OpendataApiParams {
-  Authorization: string
+  Authorization?: string
   format?: 'JSON' | 'XML'
 }
 

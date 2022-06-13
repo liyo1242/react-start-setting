@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { OpendataModel } from './model/BEModel'
 import { OpendataWeatherParams } from './model/FEModel'
 
@@ -19,11 +19,17 @@ import { OpendataWeatherParams } from './model/FEModel'
 export const weatherApi = createApi({
   reducerPath: 'weatherApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://opendata.cwb.gov.tw',
+    baseUrl: 'https://cors-anywhere.herokuapp.com/https://opendata.cwb.gov.tw',
   }),
   endpoints: (builder) => ({
     getYunlinWeather: builder.query<OpendataModel, OpendataWeatherParams>({
-      query: () => `/v1/rest/datastore/F-D0047-025`,
+      query: (params) => ({
+        url: `/v1/rest/datastore/F-D0047-025`,
+        method: 'GET',
+        params,
+      }),
     }),
   }),
 })
+
+export const { useGetYunlinWeatherQuery } = weatherApi
