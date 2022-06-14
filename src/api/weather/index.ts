@@ -19,12 +19,12 @@ import { OpendataWeatherParams } from './model/FEModel'
 export const weatherApi = createApi({
   reducerPath: 'weatherApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://cors-anywhere.herokuapp.com/https://opendata.cwb.gov.tw',
+    baseUrl: 'https://data.epa.gov.tw',
   }),
   endpoints: (builder) => ({
     getYunlinWeather: builder.query<OpendataModel, OpendataWeatherParams>({
       query: (params) => ({
-        url: `/v1/rest/datastore/F-D0047-025`,
+        url: `/api/v2/aqx_p_229`,
         method: 'GET',
         params,
       }),

@@ -2,11 +2,12 @@ import React from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-import { useGetYunlinWeatherQuery } from 'api/weather'
+import { useGetYunlinAirQuery } from 'api/air'
 
 function App() {
-  const { data, isLoading } = useGetYunlinWeatherQuery({
-    Authorization: process.env.REACT_APP_OPENDATA_KEY,
+  const { data, isLoading } = useGetYunlinAirQuery({
+    api_key: process.env.REACT_APP_EPA_KEY,
+    limit: 10,
   })
 
   console.log(data)
